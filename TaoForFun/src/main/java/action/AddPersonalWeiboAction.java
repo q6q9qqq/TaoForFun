@@ -21,13 +21,17 @@ public class AddPersonalWeiboAction extends BaseAction {
 		this.weiboService = weiboService;
 	}
 	
-	public String checkContent(){
-		if(session.get("content") == null)
-			if (!((content == null || content.length()<=0)||(content.length()>140)))
+	public String checkWeibo(){
+		if(session.get("weibo") == null){
+			if (!((content == null || content.length()<=0)||(content.length()>140))){
+				Weibo weibo = new Weibo(content);
+				session.put("weibo",weibo);
 				return "success";
+			}
 			else
 				return "input";
-		else
+		}
+		else	
 			return "input";
 	}
 	
