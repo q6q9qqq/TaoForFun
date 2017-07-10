@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sjtu.se</groupId>
+  <groupId>com</groupId>
   <artifactId>TaoForFun</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
@@ -48,14 +48,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 	</properties>
-  
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+
+	<dependencies>
 		<dependency>
 			<groupId>antlr</groupId>
 			<artifactId>antlr</artifactId>
@@ -227,12 +221,62 @@
 			<version>${javax.servlet-api.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		  <dependency>  
+<groupId>net.sf.json-lib</groupId>  
+<artifactId>json-lib</artifactId>  
+<version>2.4</version>  
+<classifier>jdk15</classifier><!--指定jdk版本-->  
+</dependency>  
 
-  </dependencies>
-  <build>
-    <finalName>TaoForFun</finalName>
-      <plugins>
-  			<plugin>
+        
+        <!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-json-plugin -->
+<dependency>
+    <groupId>org.apache.struts</groupId>
+    <artifactId>struts2-json-plugin</artifactId>
+    <version>2.2.1</version>
+</dependency>
+
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+<dependency>
+    <groupId>taglibs</groupId>
+    <artifactId>standard</artifactId>
+    <version>1.1.2</version>
+</dependency>
+		
+		
+		<!-- MongoDB -->
+		<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongo-java-driver</artifactId>
+    <version>2.9.3</version>
+</dependency>
+
+
+
+		<!-- gson -->
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.2.4</version>
+</dependency>
+
+		
+		
+
+	</dependencies>
+	
+		<build>
+		<finalName>TaoForFun</finalName>
+    
+    <plugins>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.plugin.version}</version>
@@ -253,6 +297,6 @@
 					<server>tomcat7</server>
 				</configuration>
 			</plugin>
-	</plugins>
+    </plugins>
   </build>
 </project>
