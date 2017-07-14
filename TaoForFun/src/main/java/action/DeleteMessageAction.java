@@ -27,7 +27,7 @@ public class DeleteMessageAction {
 		Message message = messageService.getMessageByMessageid(messageid);
 		messageService.deleteMessage(message);
 		
-		return "success";
+		return SUCCESS;
 		
 	
 	}

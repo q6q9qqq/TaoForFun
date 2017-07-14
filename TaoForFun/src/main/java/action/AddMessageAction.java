@@ -39,7 +39,7 @@ public class AddMessageAction {
 		java.sql.Timestamp time = new java.sql.Timestamp(new java.util.Date().getTime());
 		Message message = new Message(sender, accepter, content, time);
 		if(messageService.addMessage(message))
-			return "success";
+			return SUCCESS;
 		else
 			return "input";
 	}
