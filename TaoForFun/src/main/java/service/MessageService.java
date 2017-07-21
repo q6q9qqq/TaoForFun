@@ -12,5 +12,5 @@ public interface MessageService {
 	
 	public List<Message> getMessageBySender(String sender);
 	
-	public List<Message> getMessageByBoth(String sender, String accepter);
+
 }
